@@ -6,7 +6,7 @@
 
 Требуется:
 [![Java 17](https://img.shields.io/badge/Java%20JDK%2017-8A2BE2)](https://adoptium.net/temurin/releases/?version=17&os=windows)
-
+ - Желательно удалить Java 8, или запускать именно через JDK 17.
 
 
 </div>
