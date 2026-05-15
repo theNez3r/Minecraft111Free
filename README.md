@@ -1,259 +1,449 @@
-# Minecraft 1.1.1 Free - Horror Mod
+<div align="center">
 
-A creepypasta-style horror modification for Minecraft 1.1 that progressively reveals disturbing anomalies.
+# 🎮 Minecraft 1.1.1 Free - Horror Mod
 
-## ⚠️ WARNING
+### Крипипаста-модификация для Minecraft 1.1
 
-This modification contains:
-- **Loud sounds and screamers**
-- **Flashing lights and visual effects**
-- **Window manipulation**
-- **Potentially disturbing content**
-- **System-level commands that can crash Windows**
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.1-green.svg)](https://minecraft.net)
+[![Java](https://img.shields.io/badge/Java-8+-orange.svg)](https://www.java.com)
+[![Status](https://img.shields.io/badge/Status-Release%20Candidate-blue.svg)](https://github.com)
+[![Progress](https://img.shields.io/badge/Progress-95%25-brightgreen.svg)](https://github.com)
 
-**Not recommended for:**
-- People with epilepsy or photosensitivity
-- Children under 13
-- People with heart conditions
-- Anyone playing on their main PC (use VM for testing)
+*Модификация, которая постепенно раскрывает тревожные аномалии...*
 
-**Play at your own risk!**
+[Установка](#-установка) • [Особенности](#-особенности) • [Команды](#-команды) • [Документация](#-документация)
+
+</div>
 
 ---
 
-## 📖 Description
+## ⚠️ ПРЕДУПРЕЖДЕНИЕ
 
-Minecraft 1.1.1 Free appears to be a normal Minecraft version at first, but as you play, strange things begin to happen. A dark figure watches you from the distance. The world glitches. Time flickers. And if you venture deep enough, you'll discover something that was never meant to be found...
+> **ВНИМАНИЕ!** Эта модификация содержит потенциально опасный и тревожный контент.
 
----
+<details>
+<summary><b>Нажмите, чтобы прочитать полное предупреждение</b></summary>
 
-## ✨ Features
+### Содержит:
+- 🔊 **Громкие звуки и скримеры**
+- ⚡ **Мигающие огни и визуальные эффекты**
+- 🪟 **Манипуляции с окном**
+- 👁️ **Потенциально тревожный контент**
+- 💻 **Системные команды, которые могут вызвать краш Windows**
 
-### 🌑 The Stalker (Entity404)
-A mysterious black entity that follows you from the shadows. It maintains distance but never truly leaves. Look directly at it, and it vanishes... but turn away, and it returns.
+### Не рекомендуется для:
+- ❌ Людей с эпилепсией или светочувствительностью
+- ❌ Детей младше 13 лет
+- ❌ Людей с сердечными заболеваниями
+- ❌ Тех, кто играет на основном ПК (используйте VM!)
 
-### 🌀 World Anomalies
-- **Time Distortions**: Day and night cycle rapidly
-- **Cursor Possession**: Your mouse moves on its own
-- **Reality Breaks**: The game window shakes violently
-- **Red Torches**: Strange torches appear in caves
+### ⚠️ Играйте на свой страх и риск!
 
-### 😱 Screamers
-After 10 minutes of play, the game begins to fight back. Audio distortions, visual flashes, and entity manifestations increase in intensity over time.
-
-### 🚪 The Trap
-After 30 minutes, you realize you can't leave. The exit button stops working. Closing the window shows errors. You're stuck... unless you know the secret command.
-
-### 💎 The Discovery
-Somewhere in the world lies a portal (500-2000 blocks from spawn). Beyond it, a long tunnel of bedrock. At the end, a chest with diamonds. But taking them triggers something terrible...
-
-### 🏚️ Abandoned Structures
-As you explore caves, you'll find signs that someone was here before you. Half-built structures, random chests, crafting tables left behind. You're not alone...
-
-### 🏠 The Error404 House
-Rarely (1 in 500 chunks), you might stumble upon a wooden house with a sign reading "ERROR 404". Enter at your own risk...
-
-### 🖥️ The Aftermath
-When you finally escape (or the game crashes), a file appears on your desktop: `STAYAWAY.txt`
+</details>
 
 ---
 
-## 🎮 Installation
+## 📖 Описание
 
-### Requirements
-- Java 8 or higher
-- Windows OS (for full features)
-- Minecraft 1.1 compatible launcher
+**Minecraft 1.1.1 Free** сначала выглядит как обычная версия Minecraft, но по мере игры начинают происходить странные вещи...
 
-### Steps
-1. Download the modified `Minecraft.jar`
-2. Place in your Minecraft directory
-3. Launch with your preferred launcher
-4. Create a new world and play
+- 👤 Темная фигура наблюдает за вами издалека
+- 🌀 Мир начинает глючить
+- ⏰ Время мерцает
+- 💎 Если вы зайдете достаточно глубоко, вы обнаружите то, что никогда не должно было быть найдено...
 
 ---
 
-## 🎯 Commands
+## ✨ Особенности
+
+### 🌑 Сталкер (Entity404)
+
+Таинственная черная сущность, которая следует за вами из теней.
+
+- 👁️ Держит дистанцию, но никогда не уходит
+- 👻 Исчезает, когда вы смотрите прямо на нее
+- 🔄 Возвращается, когда вы отворачиваетесь
+
+### 🌀 Аномалии мира
+
+| Эффект | Описание |
+|--------|----------|
+| ⏰ **Искажения времени** | День и ночь быстро сменяют друг друга |
+| 🖱️ **Одержимость курсора** | Ваша мышь двигается сама по себе |
+| 🪟 **Разрывы реальности** | Окно игры сильно трясется |
+| 🔥 **Красные факелы** | Странные факелы появляются в пещерах |
+
+### 😱 Скримеры
+
+> После **10 минут** игры начинается настоящий хоррор
+
+- 🔊 Искажения звука
+- ⚡ Визуальные вспышки
+- 👻 Проявления сущностей
+- 📈 Интенсивность растет со временем
+
+### 🚪 Ловушка
+
+> После **30 минут** вы понимаете, что не можете выйти...
+
+- ❌ Кнопка выхода перестает работать
+- 🚫 Закрытие окна показывает ошибки
+- 🔒 Вы застряли... если только не знаете секретную команду
+
+### 💎 Открытие
+
+```
+Портал → Туннель из бедрока → Сундук с алмазами → ???
+```
+
+- 🌍 Портал находится в 500-2000 блоках от спавна
+- 🕳️ За ним длинный туннель из бедрока
+- 💎 В конце сундук с алмазами
+- ⚠️ Но их взятие запускает нечто ужасное...
+
+### 🏚️ Заброшенные структуры
+
+Исследуя пещеры, вы найдете признаки того, что кто-то был здесь до вас:
+
+- 🏗️ Недостроенные структуры
+- 📦 Случайные сундуки
+- 🔨 Оставленные верстаки
+- 👤 Вы не одни...
+
+### 🏠 Дом Error404
+
+> **Редкость:** 1 из 500 чанков
+
+Деревянный дом с табличкой **"ERROR 404"**
+
+⚠️ Входите на свой страх и риск...
+
+### 🖥️ Последствия
+
+Когда вы наконец сбежите (или игра крашнется), на вашем рабочем столе появится файл:
+
+```
+📄 STAYAWAY.txt
+```
+
+---
+
+## 🎮 Установка
+
+### Требования
+
+- ☕ **Java 8+**
+- 🪟 **Windows** (для полного функционала)
+- 📱 **Android** (PojavLauncher, Zalith)
+- 🎮 **Лаунчер**, совместимый с Minecraft 1.1
+
+### Шаги установки
+
+1. 📥 Скачайте модифицированный `Minecraft.jar`
+2. 📂 Поместите в директорию Minecraft
+3. 🚀 Запустите через ваш лаунчер
+4. 🌍 Создайте новый мир и играйте
+
+---
+
+## 🎯 Команды
 
 ### `/safe`
-Disables all horror features and safely closes the game. Use this if you need to exit immediately.
+
+```
+Отключает BSOD при финальном краше
+```
+
+- ✅ Мистика остается активной
+- ✅ Все хоррор-эффекты работают
+- ❌ Отключается только синий экран смерти
+
+### `/x100`
+
+```
+Ускоряет все хоррор-эффекты в 100 раз
+```
+
+- ⚡ Для быстрого тестирования
+- ⏱️ 17 минут → ~10 секунд
 
 ### `powershell wininit`
-⚠️ **EXTREMELY DANGEROUS** - Triggers Windows Blue Screen of Death. **NEVER USE ON REAL PC!** Only for testing in Virtual Machines.
+
+> ⚠️ **КРАЙНЕ ОПАСНО!**
+
+```
+Вызывает синий экран смерти Windows
+```
+
+- 🚫 **НИКОГДА НЕ ИСПОЛЬЗУЙТЕ НА РЕАЛЬНОМ ПК!**
+- 🖥️ Только для тестирования в виртуальных машинах
 
 ---
 
-## 📊 Implementation Status
+## 📊 Статус реализации
 
-**Completed Features (92%):**
-- ✅ Game branding and title
-- ✅ Entity404 stalker system
-- ✅ World glitch effects
-- ✅ Screamer system
-- ✅ Exit trap mechanics
-- ✅ BSOD trigger and safe mode
-- ✅ Desktop file creation
-- ✅ Black demon attack sequence
-- ✅ Diamond chest trigger
-- ✅ Bedrock tunnel dimension
-- ✅ Custom portal generation
-- ✅ Player presence signs
-- ✅ Error404.png house
+### ✅ Завершено (95%)
 
-**Pending Features (8%):**
-- ❌ Red torch cave placement (optional cosmetic feature)
+<details>
+<summary><b>Показать список функций</b></summary>
+
+- ✅ Брендинг и название игры
+- ✅ Система сталкера Entity404
+- ✅ Эффекты глитчей мира
+- ✅ Система скримеров
+- ✅ Механика ловушки выхода
+- ✅ Триггер BSOD и безопасный режим
+- ✅ Создание файла на рабочем столе
+- ✅ Последовательность атаки черного демона
+- ✅ Триггер сундука с алмазами
+- ✅ Измерение туннеля из бедрока
+- ✅ Генерация кастомного портала
+- ✅ Знаки присутствия игрока
+- ✅ Дом Error404.png
+- ✅ Поддержка Android лаунчеров (PojavLauncher, Zalith)
+- ✅ Кастомные звуки (tunnel.ogg, crash.ogg)
+- ✅ Исправлено закрытие входа в туннель
+
+</details>
+
+### ❌ В разработке (5%)
+
+- ❌ Красные факелы в пещерах (опциональная косметическая функция)
 
 ---
 
-## 🔧 Building from Source
+## 🔧 Сборка из исходников
 
-See [BUILD.md](doc/BUILD.md) for detailed build instructions.
+### Быстрая сборка
 
-Quick build:
 ```batch
 cd C:\Users\nez3r\Desktop\vers\minecraft1_1_1
 recompile.bat
 ```
 
-Output: `C:\Users\nez3r\Desktop\666\Minecraft.jar`
+**Вывод:** `C:\Users\nez3r\Desktop\666\Minecraft.jar`
+
+### Подробная документация
+
+См. [BUILD.md](doc/BUILD.md) для детальных инструкций
 
 ---
 
-## 📚 Documentation
+## 📚 Документация
 
-- [DESIGN.md](doc/DESIGN.md) - Technical design document
-- [BUILD.md](doc/BUILD.md) - Build instructions
-- [PROGRESS.md](doc/PROGRESS.md) - Implementation progress
-- [SUMMARY.md](doc/SUMMARY.md) - Feature summary
-- [CLAUDE.md](CLAUDE.md) - Codebase documentation
-
----
-
-## 🐛 Known Issues
-
-1. Window shake may not work on all window managers
-2. Cursor drift may conflict with some mouse drivers
-3. BSOD command requires admin privileges
-4. Desktop file creation may fail if Desktop folder doesn't exist
-5. Entity textures are missing (will use default model)
+| Документ | Описание |
+|----------|----------|
+| [DESIGN.md](doc/DESIGN.md) | Технический документ дизайна |
+| [BUILD.md](doc/BUILD.md) | Инструкции по сборке |
+| [PROGRESS.md](doc/PROGRESS.md) | Прогресс реализации |
+| [SUMMARY.md](doc/SUMMARY.md) | Сводка функций |
+| [CLAUDE.md](CLAUDE.md) | Документация кодовой базы |
 
 ---
 
-## 🎬 Gameplay Tips
+## 🐛 Известные проблемы
 
-### Survival Tips
-1. Don't look at Entity404 for too long
-2. The `/safe` command is your emergency exit
-3. After 30 minutes, you're trapped - plan accordingly
-4. Taking diamonds triggers the final sequence
-
-### Testing Tips
-1. Use a Virtual Machine for BSOD testing
-2. Keep volume low for screamer testing
-3. Test in windowed mode to see window effects
-4. Use F3+B to see entity hitboxes
+| # | Проблема | Статус |
+|---|----------|--------|
+| 1 | Тряска окна может не работать на всех оконных менеджерах | 🔍 Известно |
+| 2 | Дрейф курсора может конфликтовать с некоторыми драйверами мыши | 🔍 Известно |
+| 3 | Команда BSOD требует прав администратора | ⚠️ Ограничение |
+| 4 | Создание файла на рабочем столе может не сработать | 🔍 Известно |
+| 5 | Текстуры сущностей отсутствуют (используется модель по умолчанию) | 📝 Планируется |
 
 ---
 
-## ⚙️ Technical Details
+## 🎬 Советы по игре
 
-**Base Version:** Minecraft 1.1  
-**Mod Tool:** RetroMCP  
-**Language:** Java  
-**Target Platform:** Windows (some features work on other OS)
+### 🛡️ Советы по выживанию
 
-**New Classes:**
-- `HorrorState` - Global state manager
-- `Entity404` - Stalker entity
-- `Render404` - Stalker renderer
-- `EntityBlackDemon` - Attack entity
-- `RenderBlackDemon` - Attack renderer
-- `EntityError404` - Jump scare entity
-- `RenderError404` - Error404 renderer
-- `GlitchManager` - Glitch effects
-- `ScreamerManager` - Screamer system
-- `AttackSequenceManager` - Attack controller
-- `BlockRedTorch` - Red torch block
-- `BlockPortal404` - Custom portal block
-- `WorldProviderTunnel` - Tunnel dimension provider
-- `ChunkProviderTunnel` - Tunnel chunk generator
-- `Teleporter404` - Portal teleporter
-- `WorldGenPortal404` - Portal structure generator
-- `WorldGenAbandonedStructures` - Abandoned structure generator
-- `WorldGenError404House` - Error404 house generator
+1. 👁️ Не смотрите на Entity404 слишком долго
+2. 🆘 Команда `/safe` - ваш аварийный выход
+3. ⏰ После 30 минут вы в ловушке - планируйте соответственно
+4. 💎 Взятие алмазов запускает финальную последовательность
 
-**Modified Classes:**
-- `Minecraft` - Main game loop
-- `EntityRenderer` - Camera control
-- `EntityPlayerSP` - Error404 house detection
-- `GuiChat` - Command handling
-- `GuiIngameMenu` - Exit trap
-- `GameWindowListener` - Window close handling
-- `TileEntityChest` - Diamond trigger
-- `RenderManager` - Entity registration
-- `Block` - Block registration
-- `WorldProvider` - Dimension registration
-- `ChunkProviderGenerate` - Structure generation
-- `TileEntityChest` - Diamond trigger
+### 🧪 Советы по тестированию
+
+1. 🖥️ Используйте виртуальную машину для тестирования BSOD
+2. 🔊 Держите громкость низкой для тестирования скримеров
+3. 🪟 Тестируйте в оконном режиме, чтобы видеть эффекты окна
+4. 🔍 Используйте F3+B для просмотра хитбоксов сущностей
 
 ---
 
-## 🤝 Credits
+## ⚙️ Технические детали
 
-**Original Concept:** Based on Minecraft creepypasta themes  
-**Development:** Claude Code (Anthropic)  
-**Base Game:** Minecraft 1.1 by Mojang  
-**Decompiler:** RetroMCP
+### Основная информация
+
+| Параметр | Значение |
+|----------|----------|
+| **Базовая версия** | Minecraft 1.1 |
+| **Инструмент мода** | RetroMCP |
+| **Язык** | Java |
+| **Платформы** | Windows, Android (PojavLauncher, Zalith), Linux (частично) |
+
+### Новые классы
+
+<details>
+<summary><b>Показать список классов (20+)</b></summary>
+
+#### Управление состоянием
+- `HorrorState` - Менеджер глобального состояния
+
+#### Сущности
+- `Entity404` - Сущность сталкера
+- `Render404` - Рендерер сталкера
+- `EntityBlackDemon` - Сущность атаки
+- `RenderBlackDemon` - Рендерер атаки
+- `EntityError404` - Сущность джамп-скера
+- `RenderError404` - Рендерер Error404
+
+#### Эффекты
+- `GlitchManager` - Эффекты глитчей
+- `ScreamerManager` - Система скримеров
+- `AttackSequenceManager` - Контроллер атаки
+
+#### Блоки и измерения
+- `BlockRedTorch` - Блок красного факела
+- `BlockPortal404` - Блок кастомного портала
+- `WorldProviderTunnel` - Провайдер измерения туннеля
+- `ChunkProviderTunnel` - Генератор чанков туннеля
+- `Teleporter404` - Телепортер портала
+
+#### Генераторы мира
+- `WorldGenPortal404` - Генератор структуры портала
+- `WorldGenAbandonedStructures` - Генератор заброшенных структур
+- `WorldGenError404House` - Генератор дома Error404
+- `WorldGenBedrockTunnel` - Генератор туннеля из бедрока
+
+</details>
+
+### Модифицированные классы
+
+<details>
+<summary><b>Показать список модификаций</b></summary>
+
+- `Minecraft` - Основной игровой цикл
+- `EntityRenderer` - Управление камерой
+- `EntityPlayerSP` - Обнаружение дома Error404
+- `GuiChat` - Обработка команд
+- `GuiIngameMenu` - Ловушка выхода
+- `GameWindowListener` - Обработка закрытия окна
+- `TileEntityChest` - Триггер алмазов
+- `RenderManager` - Регистрация сущностей
+- `Block` - Регистрация блоков
+- `WorldProvider` - Регистрация измерений
+- `ChunkProviderGenerate` - Генерация структур
+- `SoundManager` - Система звуков
+- `ThreadDownloadResources` - Загрузка ресурсов
+
+</details>
 
 ---
 
-## ⚖️ Legal
+## 🎵 Кастомные звуки
 
-This is a fan-made modification for educational and entertainment purposes.  
-Minecraft is a trademark of Mojang Studios.  
-This mod is not affiliated with or endorsed by Mojang.
+### Расположение
 
-**Use at your own risk.** The developers are not responsible for:
-- System crashes or data loss
-- Psychological distress
-- Hardware damage
-- Any other consequences of using this mod
+```
+minecraft/game/resources/newsound/error/
+├── tunnel.ogg  # Воспроизводится при входе в туннель
+└── crash.ogg   # Воспроизводится перед финальным крашем
+```
 
----
+### Технические характеристики
 
-## 🔒 Safety Recommendations
-
-### For Players
-1. **Use a Virtual Machine** if testing BSOD features
-2. **Lower your volume** before playing
-3. **Take breaks** if you feel uncomfortable
-4. **Know the `/safe` command** for emergency exit
-5. **Don't play in the dark** if easily scared
-
-### For Developers
-1. **Test in isolated environment**
-2. **Backup your work** before building
-3. **Document all changes**
-4. **Warn users** about dangerous features
-5. **Provide safe exit options**
+| Параметр | Значение |
+|----------|----------|
+| **Кодек** | Vorbis (Ogg Vorbis) |
+| **Битрейт** | 96-128 kbps (эффекты), 128-160 kbps (музыка) |
+| **Частота** | 44100 Hz |
+| **Каналы** | Mono (эффекты), Stereo (музыка) |
 
 ---
 
-## 📞 Support
+## 🤝 Благодарности
 
-For issues or questions:
-- Check [SUMMARY.md](doc/SUMMARY.md) for feature status
-- Review [BUILD.md](doc/BUILD.md) for build problems
-- See [Known Issues](#-known-issues) section
-
----
-
-## 🎮 Enjoy... if you dare.
-
-*"Are you having fun?:)"*
+| Роль | Автор |
+|------|-------|
+| **Оригинальная концепция** | Темы крипипасты Minecraft |
+| **Разработка** | Claude Code (Anthropic) |
+| **Базовая игра** | Minecraft 1.1 от Mojang |
+| **Декомпилятор** | RetroMCP |
 
 ---
 
-**Version:** 1.1.1 Free  
-**Status:** Release Candidate (92% complete)  
-**Last Updated:** 2026-05-13
+## ⚖️ Правовая информация
+
+> Это фанатская модификация в образовательных и развлекательных целях.
+
+- Minecraft является торговой маркой **Mojang Studios**
+- Этот мод **не связан** с Mojang и **не одобрен** ими
+- Используйте на свой страх и риск
+
+### Отказ от ответственности
+
+Разработчики **не несут ответственности** за:
+
+- ❌ Крах системы или потерю данных
+- ❌ Психологический дистресс
+- ❌ Повреждение оборудования
+- ❌ Любые другие последствия использования этого мода
+
+---
+
+## 🔒 Рекомендации по безопасности
+
+### Для игроков
+
+| # | Рекомендация |
+|---|--------------|
+| 1 | 🖥️ Используйте виртуальную машину при тестировании BSOD |
+| 2 | 🔊 Понизьте громкость перед игрой |
+| 3 | ⏸️ Делайте перерывы, если чувствуете дискомфорт |
+| 4 | 🆘 Знайте команду `/safe` для аварийного выхода |
+| 5 | 💡 Не играйте в темноте, если легко пугаетесь |
+
+### Для разработчиков
+
+| # | Рекомендация |
+|---|--------------|
+| 1 | 🧪 Тестируйте в изолированной среде |
+| 2 | 💾 Делайте резервные копии перед сборкой |
+| 3 | 📝 Документируйте все изменения |
+| 4 | ⚠️ Предупреждайте пользователей об опасных функциях |
+| 5 | 🚪 Предоставляйте безопасные варианты выхода |
+
+---
+
+## 📞 Поддержка
+
+### Возникли проблемы?
+
+1. 📖 Проверьте [SUMMARY.md](doc/SUMMARY.md) для статуса функций
+2. 🔧 Просмотрите [BUILD.md](doc/BUILD.md) для проблем со сборкой
+3. 🐛 См. раздел [Известные проблемы](#-известные-проблемы)
+
+### Связь
+
+- 💬 Создайте Issue на GitHub
+- 📧 Свяжитесь с разработчиками
+
+---
+
+<div align="center">
+
+## 🎮 Наслаждайтесь... если осмелитесь.
+
+### *"Are you having fun?:)"*
+
+---
+
+**Версия:** 1.1.1 Free  
+**Статус:** Release Candidate (95% завершено)  
+**Последнее обновление:** 2026-05-15
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black.svg?logo=github)](https://github.com)
+[![License](https://img.shields.io/badge/License-Fan%20Made-red.svg)](https://github.com)
+
+</div>
