@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+	<component name="RunManager">
+		<configuration name="Minecraft Client" type="Application" factoryName="Application">
+			<option name="MAIN_CLASS_NAME" value="org.mcphackers.launchwrapper.Launch" />
+			<module name="minecraft_client" />
+			<option name="PROGRAM_PARAMETERS" value="--username Player --uuid - --session - --version 1.1 --gameDir . --assetsDir .\assets --assetIndex 1.0.0-rc1 --accessToken - --userProperties {} --userType legacy --versionType release --skinProxy pre-1.8" />
+			<option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/game" />
+			<method v="2">
+				<option name="Make" enabled="true" />
+			</method>
+		</configuration>
+	</component>
+</project>

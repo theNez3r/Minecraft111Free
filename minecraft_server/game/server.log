@@ -1,0 +1,17 @@
+2026-05-13 20:39:48 [INFO] Starting minecraft server version 1.1
+2026-05-13 20:39:48 [INFO] Loading properties
+2026-05-13 20:39:48 [WARNING] server.properties does not exist
+2026-05-13 20:39:48 [INFO] Generating new properties file
+2026-05-13 20:39:49 [INFO] Starting Minecraft server on *:25565
+2026-05-13 20:39:49 [WARNING] Failed to load ban list: java.io.FileNotFoundException: banned-players.txt (Не удается найти указанный файл)
+2026-05-13 20:39:49 [WARNING] Failed to load ip ban list: java.io.FileNotFoundException: banned-ips.txt (Не удается найти указанный файл)
+2026-05-13 20:39:49 [WARNING] Failed to load operators list: java.io.FileNotFoundException: ops.txt (Не удается найти указанный файл)
+2026-05-13 20:39:49 [WARNING] Failed to load white-list: java.io.FileNotFoundException: white-list.txt (Не удается найти указанный файл)
+2026-05-13 20:39:49 [INFO] Preparing level "world"
+2026-05-13 20:39:49 [INFO] Default game type: 0
+2026-05-13 20:39:49 [INFO] Preparing start region for level 0
+2026-05-13 20:39:50 [INFO] Done (1568416800ns)! For help, type "help" or "?"
+2026-05-13 20:39:50 [INFO] Stopping server
+2026-05-13 20:39:50 [INFO] Saving chunks
+2026-05-13 20:39:51 [INFO] Saving chunks
+2026-05-13 20:39:51 [INFO] Saving chunks
