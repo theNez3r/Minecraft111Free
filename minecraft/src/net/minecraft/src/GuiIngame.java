@@ -424,6 +424,43 @@ public class GuiIngame extends Gui {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		GL11.glDisable(GL11.GL_LIGHTING);
 		GL11.glEnable(GL11.GL_ALPHA_TEST);
+
+		// Horror mod: Render crash effects
+		if(CrashEffectsManager.isActive()) {
+			CrashEffectsManager.update();
+			renderCrashEffects(var6, var7, var8);
+		}
+	}
+
+	/**
+	 * Render crash effects overlay
+	 */
+	private void renderCrashEffects(int screenWidth, int screenHeight, FontRenderer fontRenderer) {
+		// Render flash overlay
+		if(CrashEffectsManager.shouldFlash()) {
+			int flashColor = CrashEffectsManager.getFlashColor();
+			drawRect(0, 0, screenWidth, screenHeight, flashColor);
+		}
+
+		// Render glitching message
+		GL11.glPushMatrix();
+		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+
+		String message = CrashEffectsManager.getCurrentMessage();
+		float scale = CrashEffectsManager.getMessageScale();
+		float x = CrashEffectsManager.getMessageX() * screenWidth;
+		float y = CrashEffectsManager.getMessageY() * screenHeight;
+		int color = CrashEffectsManager.getMessageColor();
+
+		GL11.glTranslatef(x, y, 0.0F);
+		GL11.glScalef(scale, scale, 1.0F);
+
+		// Draw message with shadow for better visibility
+		fontRenderer.drawStringWithShadow(message, 0, 0, color);
+
+		GL11.glPopMatrix();
+		GL11.glDisable(GL11.GL_BLEND);
 	}
 
 	private void renderBossHealth() {

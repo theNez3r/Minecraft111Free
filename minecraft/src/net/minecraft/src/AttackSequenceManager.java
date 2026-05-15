@@ -47,7 +47,10 @@ public class AttackSequenceManager {
         // Start message spam thread
         startMessageSpam();
 
-        // Skip violent window shake to prevent freeze
+        // Start crash visual effects
+        CrashEffectsManager.startEffects();
+
+        // Skip violent window shake to prevent freeze (now handled by CrashEffectsManager)
         // GlitchManager.triggerViolentShake();
 
         // Play ambient sound

@@ -925,6 +925,11 @@ public abstract class Minecraft implements Runnable {
 	}
 
 	public void displayInGameMenu() {
+		// Horror mod: Block pause during crash effects
+		if(CrashEffectsManager.isActive()) {
+			return;
+		}
+
 		if(this.currentScreen == null) {
 			this.displayGuiScreen(new GuiIngameMenu());
 		}
