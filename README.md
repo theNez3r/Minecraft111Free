@@ -4,8 +4,9 @@
 
 ### Кастомная хоррор версия на основе Minecraft 1.1
 
-*Требуется: *
+Требуется:
 [![Java 17](https://img.shields.io/badge/Java%20JDK%2017-8A2BE2)](https://adoptium.net/temurin/releases/?version=17&os=windows)
+
 
 
 </div>
@@ -16,9 +17,9 @@
 
 ### Требования
 - **Java 17+**
-- **Windows** (для полного функционала)
+- **Windows 7> ** (для полного функционала)
+  - Наличие Powershell.
 - **Android** (PojavLauncher, Zalith)
-- **Лаунчер**, совместимый с Minecraft 1.1
 
 ### Шаги установки
 1. Скачайте архив игры
