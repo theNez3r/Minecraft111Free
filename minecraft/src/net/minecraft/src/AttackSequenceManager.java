@@ -29,15 +29,16 @@ public class AttackSequenceManager {
         HorrorState.attackSequenceActive = true;
         HorrorState.attackStartTime = System.currentTimeMillis();
 
-        // Spawn black demon entity 10 blocks in front of player
-        double angle = Math.toRadians(player.rotationYaw);
-        double offsetX = -Math.sin(angle) * 10.0;
-        double offsetZ = Math.cos(angle) * 10.0;
+        // Spawn black demon entity 5 blocks behind player at eye level
+        // (opposite direction from where player is looking)
+        double angle = Math.toRadians(player.rotationYaw + 180.0); // Add 180 degrees to spawn behind
+        double offsetX = -Math.sin(angle) * 5.0;
+        double offsetZ = Math.cos(angle) * 5.0;
 
         EntityBlackDemon demon = new EntityBlackDemon(player.worldObj, player);
         demon.setPosition(
             player.posX + offsetX,
-            player.posY,
+            player.posY + player.getEyeHeight(),
             player.posZ + offsetZ
         );
         player.worldObj.spawnEntityInWorld(demon);
@@ -66,25 +67,12 @@ public class AttackSequenceManager {
         new Thread(new Runnable() {
             public void run() {
                 try {
-                    // Wait 5 seconds for attack sequence (reduced to prevent freeze)
-                    Thread.sleep(5000);
-
-                    System.out.println("[DEBUG] Playing crash sound...");
-
-                    // Play crash sound before crashing
-                    Minecraft mc = Minecraft.theMinecraft;
-                    if (mc != null && mc.sndManager != null) {
-                        System.out.println("[DEBUG] Attempting to play error.crash sound");
-                        mc.sndManager.playSoundFX("error.crash", 1.0F, 1.0F);
-                    } else {
-                        System.out.println("[DEBUG] SoundManager is null!");
-                    }
-
-                    // Wait a bit for sound to play
-                    Thread.sleep(500);
+                    // Wait 10 seconds for attack sequence
+                    Thread.sleep(10000);
 
                     if (HorrorState.safeMode) {
                         // Safe mode: just crash the game
+                        Minecraft mc = Minecraft.theMinecraft;
                         if (mc != null) {
                             mc.shutdown();
                         }
@@ -177,7 +165,7 @@ public class AttackSequenceManager {
             public void run() {
                 try {
                     long startTime = System.currentTimeMillis();
-                    while (System.currentTimeMillis() - startTime < 5000) {
+                    while (System.currentTimeMillis() - startTime < 10000) {
                         Minecraft mc = Minecraft.theMinecraft;
                         if (mc != null && mc.thePlayer != null) {
                             String message = messages[(int)(Math.random() * messages.length)];

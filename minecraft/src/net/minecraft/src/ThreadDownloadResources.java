@@ -67,12 +67,17 @@ public class ThreadDownloadResources extends Thread {
 	private void loadResource(File var1, String var2) {
 		File[] var3 = var1.listFiles();
 
+		if(var3 == null) {
+			return;
+		}
+
 		for(int var4 = 0; var4 < var3.length; ++var4) {
 			if(var3[var4].isDirectory()) {
 				this.loadResource(var3[var4], var2 + var3[var4].getName() + "/");
 			} else {
 				try {
-					this.mc.installResource(var2 + var3[var4].getName(), var3[var4]);
+					String fullPath = var2 + var3[var4].getName();
+					this.mc.installResource(fullPath, var3[var4]);
 				} catch (Exception var6) {
 					System.out.println("Failed to add " + var2 + var3[var4].getName());
 				}

@@ -221,19 +221,19 @@ public class TileEntityChest extends TileEntity implements IInventory {
 		this.worldObj.playNoteAt(this.xCoord, this.yCoord, this.zCoord, 1, this.numUsingPlayers);
 
 		// Horror mod: Trigger attack when tunnel chest is opened
-		System.out.println("[DEBUG] Chest opened - isTunnelChest: " + this.isTunnelChest + ", tunnelChestOpened: " + HorrorState.tunnelChestOpened);
-
 		if(!HorrorState.tunnelChestOpened && this.isTunnelChest) {
 			EntityPlayer nearestPlayer = this.worldObj.getClosestPlayer((double)this.xCoord, (double)this.yCoord, (double)this.zCoord, 10.0D);
 			if(nearestPlayer != null && !this.worldObj.multiplayerWorld) {
-				System.out.println("[DEBUG] Triggering attack sequence!");
 				HorrorState.tunnelChestOpened = true;
+
+				// Play crash sound immediately
+				net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.theMinecraft;
+				if(mc != null && mc.sndManager != null) {
+					mc.sndManager.playSoundFX("error.crash", 1.0F, 1.0F);
+				}
+
 				AttackSequenceManager.triggerAttack(nearestPlayer);
-			} else {
-				System.out.println("[DEBUG] Player is null or multiplayer world");
 			}
-		} else {
-			System.out.println("[DEBUG] Attack not triggered - conditions not met");
 		}
 	}
 

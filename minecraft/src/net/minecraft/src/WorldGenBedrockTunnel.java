@@ -9,21 +9,16 @@ import java.util.Random;
 public class WorldGenBedrockTunnel extends WorldGenerator {
 
     public boolean generate(World world, Random random, int x, int y, int z) {
-        System.out.println("[DEBUG] generate() called - tunnelGenerated: " + HorrorState.tunnelGenerated);
-
         // Find suitable ground level
         while(y > 5 && world.isAirBlock(x, y, z)) {
             y--;
         }
 
         if(y <= 5) {
-            System.out.println("[DEBUG] generate() returning false - y too low: " + y);
             return false;
         }
 
         y++; // Place on top of ground
-
-        System.out.println("[DEBUG] Starting tunnel generation at: " + x + ", " + y + ", " + z);
 
         // Generate small initial tunnel entrance (only 5 blocks long initially)
         int centerY = y + 2;
@@ -88,8 +83,6 @@ public class WorldGenBedrockTunnel extends WorldGenerator {
         HorrorState.tunnelY = y;
         HorrorState.tunnelZ = z;
 
-        System.out.println("[DEBUG] Tunnel generation completed successfully!");
-
         return true;
     }
 
@@ -98,12 +91,10 @@ public class WorldGenBedrockTunnel extends WorldGenerator {
      */
     public static void generateNearPlayer(final EntityPlayer player) {
         if(player == null || player.worldObj == null) {
-            System.out.println("[DEBUG] generateNearPlayer: player or world is null");
             return;
         }
 
         if(HorrorState.tunnelGenerated) {
-            System.out.println("[DEBUG] generateNearPlayer: tunnel already generated");
             return;
         }
 
@@ -122,8 +113,6 @@ public class WorldGenBedrockTunnel extends WorldGenerator {
             tunnelY--;
         }
         tunnelY++; // Place on top of ground
-
-        System.out.println("[DEBUG] Tunnel coordinates calculated: " + tunnelX + ", " + tunnelY + ", " + tunnelZ);
 
         // Mark as generated immediately
         HorrorState.tunnelGenerated = true;
@@ -169,9 +158,6 @@ public class WorldGenBedrockTunnel extends WorldGenerator {
         lastGeneratedSegment = 4; // Already generated 0-4
 
         player.addChatMessage("\u00a78Something appeared nearby...");
-        player.addChatMessage("\u00a77[DEBUG] Tunnel entrance at: " + tunnelX + ", " + tunnelY + ", " + tunnelZ);
-
-        System.out.println("[DEBUG] Initial tunnel entrance generated - will extend as player approaches");
     }
 
     /**
@@ -211,15 +197,10 @@ public class WorldGenBedrockTunnel extends WorldGenerator {
                                    Math.abs(distZ) <= 2;
 
             if(insideTunnel && !HorrorState.tunnelEntranceClosed) {
-                System.out.println("[DEBUG] Player entered tunnel, playing sound...");
-
                 // Play tunnel entrance sound
                 net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.theMinecraft;
                 if(mc != null && mc.sndManager != null) {
-                    System.out.println("[DEBUG] Attempting to play error.tunnel sound");
                     mc.sndManager.playSoundFX("error.tunnel", 1.0F, 1.0F);
-                } else {
-                    System.out.println("[DEBUG] SoundManager is null!");
                 }
 
                 // Close entrance behind player with bedrock wall
@@ -227,9 +208,18 @@ public class WorldGenBedrockTunnel extends WorldGenerator {
                 HorrorState.tunnelEntranceClosed = true;
                 player.addChatMessage("\u00a74You hear a loud rumbling behind you...");
 
-                // Force render distance to Tiny
+                // Force render distance to Tiny and save settings
                 if(mc != null && mc.gameSettings != null) {
                     mc.gameSettings.renderDistance = 0; // 0 = Tiny
+                    mc.gameSettings.saveOptions(); // Save to persist the change
+                }
+            }
+
+            // Keep render distance locked to Tiny while in tunnel
+            if(insideTunnel && HorrorState.tunnelEntranceClosed) {
+                net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.theMinecraft;
+                if(mc != null && mc.gameSettings != null && mc.gameSettings.renderDistance != 0) {
+                    mc.gameSettings.renderDistance = 0; // Force back to Tiny
                 }
             }
 
@@ -297,9 +287,6 @@ public class WorldGenBedrockTunnel extends WorldGenerator {
                 if(chest != null) {
                     chest.isTunnelChest = true;
                     chest.setInventorySlotContents(13, new ItemStack(Item.diamond, 64));
-                    System.out.println("[DEBUG] Tunnel chest created and marked at: " + (startX + dx) + ", " + (centerY - 1) + ", " + centerZ);
-                } else {
-                    System.out.println("[DEBUG] ERROR: Chest tile entity is null!");
                 }
 
                 // Place back wall (bedrock wall behind chest at dx+1)

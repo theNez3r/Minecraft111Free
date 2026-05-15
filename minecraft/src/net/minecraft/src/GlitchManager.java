@@ -63,11 +63,6 @@ public class GlitchManager {
             startWindowShake();
             HorrorState.glitchCount = 1;
             HorrorState.lastGlitchTime = currentTime;
-
-            Minecraft mc2 = Minecraft.theMinecraft;
-            if (mc2 != null && mc2.thePlayer != null) {
-                mc2.thePlayer.addChatMessage("\u00a77[DEBUG] Window shake triggered (4 min)");
-            }
         }
 
         // Trigger day/night flicker at 8 minutes
@@ -75,11 +70,6 @@ public class GlitchManager {
             triggerDayNightFlicker();
             HorrorState.glitchCount = 2;
             HorrorState.lastGlitchTime = currentTime;
-
-            Minecraft mc2 = Minecraft.theMinecraft;
-            if (mc2 != null && mc2.thePlayer != null) {
-                mc2.thePlayer.addChatMessage("\u00a77[DEBUG] Day/night flicker triggered (8 min)");
-            }
         }
 
         // Trigger cursor glitch at 15 minutes
@@ -87,21 +77,11 @@ public class GlitchManager {
             startCursorGlitch();
             HorrorState.glitchCount = 3;
             HorrorState.lastGlitchTime = currentTime;
-
-            Minecraft mc2 = Minecraft.theMinecraft;
-            if (mc2 != null && mc2.thePlayer != null) {
-                mc2.thePlayer.addChatMessage("\u00a77[DEBUG] Cursor glitch triggered (15 min)");
-            }
         }
 
         // Trigger tunnel generation at 17 minutes (final glitch)
         if (HorrorState.glitchCount == 3 && !HorrorState.finalGlitchTriggered) {
             if (currentTime - HorrorState.lastGlitchTime > (tunnelGenerationTime - cursorGlitchTime)) {
-                Minecraft mc2 = Minecraft.theMinecraft;
-                if (mc2 != null && mc2.thePlayer != null) {
-                    mc2.thePlayer.addChatMessage("\u00a7c[DEBUG] Tunnel generation triggered (17 min)");
-                }
-
                 triggerFinalGlitch();
                 HorrorState.finalGlitchTriggered = true;
             }
@@ -300,28 +280,19 @@ public class GlitchManager {
             return;
         }
 
-        System.out.println("[DEBUG] triggerFinalGlitch() called");
-
         // Trigger effects at maximum intensity (but skip violent shake to avoid freeze)
         triggerDayNightFlicker();
         startCursorGlitch();
-        // triggerViolentShake(); // DISABLED - causes freeze
-
-        System.out.println("[DEBUG] Effects triggered, playing sound");
 
         // Play ominous sound
         if (mc.sndManager != null) {
             mc.sndManager.playSoundFX("portal.portal", 2.0F, 0.3F);
         }
 
-        System.out.println("[DEBUG] Calling generateNearPlayer");
-
         // Generate bedrock tunnel near player
         if (mc.thePlayer != null && !HorrorState.tunnelGenerated) {
             WorldGenBedrockTunnel.generateNearPlayer(mc.thePlayer);
         }
-
-        System.out.println("[DEBUG] triggerFinalGlitch() completed");
     }
 
     /**

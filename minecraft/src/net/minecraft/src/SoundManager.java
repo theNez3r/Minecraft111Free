@@ -49,6 +49,67 @@ public class SoundManager {
 		}
 
 		loaded = true;
+
+		// Load sounds directly from resources folder
+		loadSoundsFromDirectory();
+	}
+
+	/**
+	 * Load all sounds from resources directory
+	 */
+	private void loadSoundsFromDirectory() {
+		try {
+			// Get resources directory
+			File resourcesDir = new File("resources");
+			if (!resourcesDir.exists()) {
+				resourcesDir = new File("game/resources");
+			}
+			if (!resourcesDir.exists()) {
+				return;
+			}
+
+			// Load sounds from sound/ and newsound/ directories
+			loadSoundsFromFolder(resourcesDir, "");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Recursively load sounds from a folder
+	 */
+	private void loadSoundsFromFolder(File folder, String prefix) {
+		File[] files = folder.listFiles();
+		if (files == null) {
+			return;
+		}
+
+		for (File file : files) {
+			if (file.isDirectory()) {
+				String dirName = file.getName();
+				// Only process sound and newsound directories
+				if (prefix.isEmpty() && !dirName.equals("sound") && !dirName.equals("newsound") &&
+				    !dirName.equals("music") && !dirName.equals("newmusic") && !dirName.equals("streaming")) {
+					continue;
+				}
+				loadSoundsFromFolder(file, prefix.isEmpty() ? dirName : prefix + "/" + dirName);
+			} else if (file.getName().endsWith(".ogg") || file.getName().endsWith(".wav") || file.getName().endsWith(".mus")) {
+				String soundPath = prefix + "/" + file.getName();
+
+				// Determine which pool to add to
+				if (prefix.startsWith("sound") || prefix.startsWith("newsound")) {
+					String relativePath = soundPath.substring(soundPath.indexOf("/") + 1);
+					this.addSound(relativePath, file);
+				} else if (prefix.startsWith("music") || prefix.startsWith("newmusic")) {
+					String relativePath = soundPath.substring(soundPath.indexOf("/") + 1);
+					this.addMusic(relativePath, file);
+				} else if (prefix.startsWith("streaming")) {
+					String relativePath = soundPath.substring(soundPath.indexOf("/") + 1);
+					this.addStreaming(relativePath, file);
+				}
+			}
+		}
 	}
 
 	public void onSoundOptionsChanged() {
@@ -74,7 +135,6 @@ public class SoundManager {
 	}
 
 	public void addSound(String var1, File var2) {
-		System.out.println("[DEBUG] Adding sound: " + var1 + " from file: " + var2.getAbsolutePath());
 		this.soundPoolSounds.addSound(var1, var2);
 	}
 
@@ -176,11 +236,9 @@ public class SoundManager {
 	}
 
 	public void playSoundFX(String var1, float var2, float var3) {
-		System.out.println("[DEBUG] playSoundFX called with: " + var1 + ", volume: " + var2 + ", pitch: " + var3);
 		if(loaded && this.options.soundVolume != 0.0F) {
 			SoundPoolEntry var4 = this.soundPoolSounds.getRandomSoundFromSoundPool(var1);
 			if(var4 != null) {
-				System.out.println("[DEBUG] Found sound entry: " + var4.soundName);
 				this.latestSoundID = (this.latestSoundID + 1) % 256;
 				String var5 = "sound_" + this.latestSoundID;
 				sndSystem.newSource(false, var5, var4.soundUrl, var4.soundName, false, 0.0F, 0.0F, 0.0F, 0, 0.0F);
@@ -192,12 +250,8 @@ public class SoundManager {
 				sndSystem.setPitch(var5, var3);
 				sndSystem.setVolume(var5, var2 * this.options.soundVolume);
 				sndSystem.play(var5);
-			} else {
-				System.out.println("[DEBUG] Sound not found in pool: " + var1);
 			}
 
-		} else {
-			System.out.println("[DEBUG] Sound system not loaded or volume is 0");
 		}
 	}
 }
